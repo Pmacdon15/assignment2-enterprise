@@ -19,24 +19,18 @@ CREATE TABLE courses (
     course_name VARCHAR(150)
 );
 
-INSERT INTO courses(course_name)
-VALUES
-("Math"),
-("Programming");
+INSERT INTO courses (course_name) VALUES ("Math"), ("Programming");
 
 CREATE TABLE enrollments (
     id INT PRIMARY KEY AUTO_INCREMENT,
     course_id int,
     user_id int,
+    grade int CHECK (
+        grade >= 0
+        AND grade <= 100
+    ),
+    course_id int,
     FOREIGN KEY (course_id) REFERENCES courses (id),
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
-CREATE TABLE grades (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    grade int CHECK (grade >= 0 AND grade <= 100),
-    course_id int,
-    user_id int,
-    FOREIGN KEY (course_id) REFERENCES courses (id),
-    FOREIGN KEY (user_id) REFERENCES users (id)
-);
