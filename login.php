@@ -11,9 +11,9 @@ $secretkey = "OurKey";
 
 $data = json_decode(file_get_contents("php://input"));
 
-if (!empty($data->username) && !empty($data->password)){
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
-    $stmt->execute(["username" => $data->username]);
+if (!empty($data->email) && !empty($data->password)){
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt->execute(["email" => $data->email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($data->password, $user["password"])) {
