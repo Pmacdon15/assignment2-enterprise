@@ -18,7 +18,7 @@ if ($method === 'POST') {
 
             echo json_encode(["message" => "grade added successfully"]);
         } catch (PDOException $e) {
-            echo json_encode(["error" => "Error adding grade"]);
+            echo json_encode(["error" => "Error adding grade " . $e]);
         }
 
     } else {
@@ -31,7 +31,7 @@ if ($method === 'POST') {
             $stmt->execute(["user_id" => $user_id, "course_id" => $data->course_id]);
             if ($stmt->rowCount() === 0) {
                 http_response_code(404);
-                echo json_encode(["error" => "Error deleting grade"]);
+                echo json_encode(["error" => "Error deleting grade" . $e]);
                 return;
             }
             echo json_encode(["message" => "grade deleted successfully"]);

@@ -3,8 +3,6 @@ include "config.php";
 
 $data = json_decode(file_get_contents("php://input"));
 
-
-
 if(!empty($data->email) && !empty($data->password) && !empty($data->role_id)){
     $hashedPassword = password_hash($data->password, PASSWORD_BCRYPT);
     $stmt = $conn->prepare("INSERT INTO users (email, password, role_id) VALUES (:email, :password, :role_id)");
