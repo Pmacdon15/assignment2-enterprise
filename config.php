@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost:3308";
-$db_name = "message_api";
+$db_name = "assignment2";
 $username = "root";
 $password = "";
 
