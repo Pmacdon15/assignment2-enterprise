@@ -22,14 +22,13 @@ CREATE TABLE courses (
 INSERT INTO courses (course_name) VALUES ("Math"), ("Programming");
 
 CREATE TABLE enrollments (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    course_id int,
+    id INT PRIMARY KEY AUTO_INCREMENT,   
     user_id int,
     grade int CHECK (
         grade >= 0
         AND grade <= 100
     ),
-    course_id int,
+    course_id int UNIQUE,
     FOREIGN KEY (course_id) REFERENCES courses (id),
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
