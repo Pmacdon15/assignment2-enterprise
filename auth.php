@@ -26,5 +26,4 @@ try {
 } catch (Exception $e) {
     die(json_encode(array('message' => 'Invalid Token', 'error' => $e->getMessage())));
 }
-
 ?>
