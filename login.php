@@ -23,8 +23,10 @@ if (!empty($data->email) && !empty($data->password)){
             "exp" => time() + (60 * 60),
             "user_id" => $user["id"]
         ];
-
-        $jwt = JWT::encode($payload, $secretkey, "HS256");
+    
+        $jwt = JWT::encode($payload, $secretkey, "HS256");        
+        
+        setcookie('auth_token', $jwt, time() + (60 * 60), '/');
         echo json_encode(["token" => $jwt]);
     } else {
         echo json_encode(["error" => "Invalid credentials."]);
