@@ -15,7 +15,11 @@ if ($method === 'POST') {
                           FROM courses 
                           WHERE id = :course_id");
             $stmt->execute(["user_id" => $user_id, "course_id" => $data->course_id, "grade" => $data->grade]);
-
+            if ($stmt->rowCount() === 0) {
+                http_response_code(404);
+                echo json_encode(["error" => "Error adding grade" ]);
+                return;
+            }
             echo json_encode(["message" => "grade added successfully"]);
         } catch (PDOException $e) {
             echo json_encode(["error" => "Error adding grade " .  $e ->getMessage()]);
