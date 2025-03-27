@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "0b9f1acd-1545-4cb5-ba36-6215ed09a30b",
-		"name": "EC School OA API",
+		"name": "EC School OA API (v2)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "33221188"
 	},
@@ -21,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ec-assignment2/signup.php",
+					"raw": "http://localhost:8080/ec-assignment2/v2/signup.php",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -53,7 +53,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ec-assignment2/login.php",
+					"raw": "http://localhost:8080/ec-assignment2/v2/login.php",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -92,7 +92,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ec-assignment2/grading.php",
+					"raw": "http://localhost:8080/ec-assignment2/v2/grading.php",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -131,7 +131,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ec-assignment2/grading.php",
+					"raw": "http://localhost:8080/ec-assignment2/v2/grading.php",
 					"protocol": "http",
 					"host": [
 						"localhost"
