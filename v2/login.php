@@ -8,7 +8,7 @@ include "config.php";
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-if ($method === "GET") {
+if ($method === "POST") {
     $login_data = json_decode(file_get_contents("php://input"));
 
     if (isset($login_data->username) && isset($login_data->password)) {
@@ -29,7 +29,7 @@ if ($method === "GET") {
             ];
 
             $jwt = JWT::encode($payload, $jwt_secret_key, "HS256");
-
+            setcookie('auth_token', $jwt, time() + (60 * 60), '/');
             echo json_encode(["token" => $jwt]);
         } else {
             echo json_encode(["error" => "Invalid username or password"]); // Invalid credentials

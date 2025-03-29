@@ -7,10 +7,12 @@ use Firebase\JWT\Key;
 include "config.php"; // $jwt_secret_key
 
 $headers = apache_request_headers();
-$jwt = isset($headers["Authorization"]) ? trim(str_replace("Bearer", "", $headers["Authorization"])) : "";
+$auth_cookie = isset($_COOKIE['auth_token']) ? $_COOKIE['auth_token'] : '';
 
-if (!$jwt) {
-    die(json_encode(["error" => "No token provided"]));
+if ($auth_cookie) {
+    $jwt = $auth_cookie;
+} else {
+    $jwt = isset($headers['Authorization']) ? trim(str_replace("Bearer", "", $headers['Authorization'])) : '';
 }
 
 try {
