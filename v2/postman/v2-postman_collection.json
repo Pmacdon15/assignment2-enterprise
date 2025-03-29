@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0b9f1acd-1545-4cb5-ba36-6215ed09a30b",
+		"_postman_id": "71526c4d-7e98-4693-94e1-6ffe708e6b8e",
 		"name": "EC School OA API (v2)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "33221188"
@@ -21,14 +21,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ec-assignment2/v2/signup.php",
-					"protocol": "http",
+					"raw": "{{URL}}/signup.php",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "8080",
 					"path": [
-						"ec-assignment2",
 						"signup.php"
 					]
 				}
@@ -53,14 +50,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ec-assignment2/v2/login.php",
-					"protocol": "http",
+					"raw": "{{URL}}/login.php",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "8080",
 					"path": [
-						"ec-assignment2",
 						"login.php"
 					]
 				}
@@ -92,14 +86,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ec-assignment2/v2/grading.php",
-					"protocol": "http",
+					"raw": "{{URL}}/grading.php",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "8080",
 					"path": [
-						"ec-assignment2",
 						"grading.php"
 					]
 				}
@@ -131,19 +122,45 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ec-assignment2/v2/grading.php",
-					"protocol": "http",
+					"raw": "{{URL}}/grading.php",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "8080",
 					"path": [
-						"ec-assignment2",
 						"grading.php"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080/ec-assignment2",
+			"type": "string"
 		}
 	]
 }
