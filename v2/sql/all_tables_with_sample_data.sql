@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS ec_school_oa_users;
 
 CREATE TABLE ec_school_oa_users (
     uid INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(255) UNIQUE,
+    username VARCHAR(100) UNIQUE,
     password VARCHAR(255),
     role ENUM('student', 'instructor')
 );
