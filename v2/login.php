@@ -29,7 +29,7 @@ if ($method === "GET") {
             ];
 
             $jwt = JWT::encode($payload, $jwt_secret_key, "HS256");
-
+            setcookie('auth_token', $jwt, time() + (60 * 60), '/');
             echo json_encode(["token" => $jwt]);
         } else {
             echo json_encode(["error" => "Invalid username or password"]); // Invalid credentials
