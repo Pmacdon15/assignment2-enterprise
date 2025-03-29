@@ -81,10 +81,6 @@ Remove a grade entry for a specific student and course.
 }
 ```
 
-**Notes:**
-- Requires teacher or admin role
-- Will return 404 if grade entry doesn't exist
-
 ## Error Handling
 All endpoints return appropriate HTTP status codes:
 - 200: Success
