@@ -64,7 +64,6 @@ Add or update a grade for a specific student and course.
 ```
 
 **Notes:**
-- Requires teacher or admin role
 - Grade must be between 0 and 100
 - Both user_id and course_id must exist in the system
 
