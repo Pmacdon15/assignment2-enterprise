@@ -40,7 +40,7 @@ if ($method === "POST") {
     }
 
 } else {
-    echo json_encode(["error" => "Only the GET method allowed"]);
+    echo json_encode(["error" => "Only the POST method allowed"]);
 }
 
 ?>
