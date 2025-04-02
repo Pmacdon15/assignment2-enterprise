@@ -34,11 +34,8 @@
 		},
 		{
 			"name": "Login",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -132,6 +129,27 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Init Database with Sample Data",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/tools/init-database-with-sample-data.php",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"tools",
+						"init-database-with-sample-data.php"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -159,7 +177,7 @@
 	"variable": [
 		{
 			"key": "URL",
-			"value": "http://localhost:8080/ec-assignment2",
+			"value": "http://localhost:8080/ec-assignment2/v2",
 			"type": "string"
 		}
 	]
