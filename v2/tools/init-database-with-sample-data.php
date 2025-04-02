@@ -1,6 +1,6 @@
 <?php
 
-include "config.php";
+include "../config.php";
 
 // clear table data
 $conn->exec("DELETE FROM $table_enrollments");
