@@ -51,7 +51,9 @@ if ($method === "POST") {
         $enrollment = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($enrollment) {
-            echo json_encode(["error" => "Grade already set"]);
+            $stmt = $conn->prepare("UPDATE $table_enrollments SET grade = :grade WHERE student_uid = :student_uid AND cid = :cid");
+            $stmt->execute(["student_uid" => $student_uid, "cid" => $cid, "grade" => $grade]);
+            echo json_encode(["message" => "Grade updated successfully"]);
             exit;
         }
 
